@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bir Varmış Bir Yokmuş</title>
+
+<style>
+  body {
+    margin: 0;
+    background-color: #f6efe3;
+    color: #30251f;
+    font-family: Georgia, serif;
+    line-height: 1.7;
+  }
+
+  header {
+    background-color: #722f37;
+    color: #fff8ed;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 36px;
+  }
+
+  main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+  }
+
+  section, article {
+    background-color: #fffcf6;
+    padding: 24px;
+    border: 1px solid #ddcdb8;
+    border-radius: 12px;
+    min-width: 0;
+  }
+
+  h2 {
+    color: #722f37;
+    margin-top: 0;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 700px) {
+    main {
+      grid-template-columns: 1fr;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+  }
+  nav ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+nav li {
+margin-bottom: 10px;
+}
+
+nav button {
+width: 100%;
+padding: 12px;
+background-color: #f6efe3;
+color: #722f37;
+border: 1px solid #ddcdb8;
+border-radius: 8px;
+font-family: inherit;
+font-size: 16px;
+text-align: left;
+cursor: pointer;
+}
+
+nav button:hover,
+nav button:focus-visible {
+background-color: #722f37;
+color: #fff8ed;
+}
+#masalMetin {
+white-space: pre-line;
+}
+nav button.secili {
+background-color: #722f37;
+color: #fff8ed;
+border-color: #722f37;
+}
+
+article button {
+background-color: #f6efe3;
+color: #722f37;
+border: 1px solid #ddcdb8;
+border-radius: 8px;
+min-width: 48px;
+min-height: 44px;
+margin-right: 8px;
+font-size: 18px;
+cursor: pointer;
+}
+
+article button:hover,
+article button:focus-visible {
+background-color: #722f37;
+color: #fff8ed;
+}
+
+main {
+align-items: start;
+}
+header {
+border-bottom: 5px solid #bc955c;
+}
+
+header::before {
+content: "✦";
+display: block;
+color: #e6c58e;
+font-size: 32px;
+margin-bottom: 10px;
+}
+
+header p {
+color: #f0ddc5;
+letter-spacing: 1px;
+}
+
+section,
+article {
+box-shadow: 0 8px 24px rgba(48, 37, 31, 0.06);
+}
+
+article {
+border-top: 4px solid #bc955c;
+}
+
+#masalMetin {
+line-height: 1.9;
+}
+
+#masalMetin::first-letter {
+float: left;
+font-size: 48px;
+line-height: 1;
+margin: 6px 10px 0 0;
+color: #722f37;
+}
+#masalAra {
+box-sizing: border-box;
+width: 100%;
+padding: 12px;
+margin-top: 8px;
+border: 1px solid #ddcdb8;
+border-radius: 8px;
+background-color: #fffcf6;
+color: #30251f;
+font-family: inherit;
+font-size: 16px;
+}
+
+#masalAra:focus {
+outline: 2px solid #722f37;
+outline-offset: 2px;
+}
+
+#aramaSonuc {
+font-size: 14px;
+color: #722f37;
+}
+temaDegistir {
+margin-top: 16px;
+padding: 10px 18px;
+border: 1px solid #e6c58e;
+border-radius: 20px;
+background-color: transparent;
+color: #fff8ed;
+font-family: inherit;
+font-size: 16px;
+cursor: pointer;
+}
+
+body.gece {
+background-color: #211c1b;
+color: #f3e8d8;
+}
+
+body.gece section,
+body.gece article {
+background-color: #302725;
+border-color: #806b50;
+}
+
+body.gece h2,
+body.gece #masalMetin::first-letter {
+color: #e6c58e;
+}
+
+body.gece nav button,
+body.gece article button,
+body.gece #masalAra {
+background-color: #211c1b;
+color: #f3e8d8;
+border-color: #806b50;
+}
+
+body.gece nav button.secili,
+body.gece nav button:hover,
+body.gece nav button:focus-visible,
+body.gece article button:hover,
+body.gece article button:focus-visible {
+background-color: #722f37;
+color: #fff8ed;
+}
+
+body.gece #aramaSonuc {
+color: #e6c58e;
+}
+body.gece section,
+body.gece article {
+background-color: #302725;
+color: #f3e8d8;
+border-color: #806b50;
+}
+
+body.gece h2,
+body.gece #masalMetin::first-letter {
+color: #e6c58e;
+}
+
+body.gece nav button,
+body.gece article button,
+body.gece #masalAra {
+background-color: #211c1b;
+color: #f3e8d8;
+border-color: #806b50;
+}
+
+body.gece nav button.secili,
+body.gece nav button.secili:hover,
+body.gece nav button.secili:focus-visible {
+background-color: #f6efe3;
+color: #722f37;
+border-color: #f6efe3;
+}
+
+body.gece #aramaSonuc {
+color: #e6c58e;
+}
+
+header button#temaDegistir {
+appearance: none;
+border-radius: 999px;
+padding: 10px 24px;
+margin-top: 16px;
+border: 1px solid #e6c58e;
+background-color: #f6efe3;
+color: #722f37;
+font-family: inherit;
+font-size: 16px;
+cursor: pointer;
+}
+body.gece #masalAra,
+body.gece nav button {
+background-color: #f6efe3;
+color: #722f37;
+border-color: #ddcdb8;
+}
+
+body.gece #masalAra::placeholder {
+color: #75665c;
+}
+
+body.gece nav button.secili,
+body.gece nav button.secili:hover,
+body.gece nav button.secili:focus-visible {
+background-color: #722f37;
+color: #fff8ed;
+border-color: #722f37;
+}
+.aramaSatiri {
+display: flex;
+align-items: center;
+gap: 12px;
+margin-bottom: 20px;
+}
+
+.aramaSatiri label {
+white-space: nowrap;
+font-size: 15px;
+}
+
+.aramaSatiri #masalAra {
+flex: 1;
+width: 0;
+min-width: 0;
+margin-top: 0;
+}
+.aramaSatiri label {
+font-size: 18px;
+font-weight: bold;
+}
+#rastgeleMasal {
+width: 100%;
+margin-top: 16px;
+padding: 12px 16px;
+border: 1px solid #bc955c;
+border-radius: 24px;
+background-color: #722f37;
+color: #fff8ed;
+font-family: inherit;
+font-size: 16px;
+cursor: pointer;
+}
+
+#rastgeleMasal:hover {
+background-color: #58232a;
+}
+
+#rastgeleMasal:focus-visible {
+outline: 2px solid #bc955c;
+outline-offset: 3px;
+}
+body.gece #rastgeleMasal {
+background-color: #f6efe3;
+color: #722f37;
+border-color: #ddcdb8;
+}
+
+body.gece #rastgeleMasal:hover {
+background-color: #e8d9c2;
+}
+article button {
+padding: 10px 16px;
+font-size: 15px;
+margin-bottom: 8px;
+}
+nav li:nth-child(1) button::before { content: "01"; }
+nav li:nth-child(2) button::before { content: "02"; }
+nav li:nth-child(3) button::before { content: "03"; }
+nav li:nth-child(4) button::before { content: "04"; }
+nav li:nth-child(5) button::before { content: "05"; }
+nav li:nth-child(6) button::before { content: "06"; }
+nav li:nth-child(7) button::before { content: "07"; }
+nav li:nth-child(8) button::before { content: "08"; }
+
+nav button::before {
+display: inline-block;
+margin-right: 12px;
+color: #94703e;
+font-size: 13px;
+font-weight: bold;
+letter-spacing: 1px;
+}
+
+nav button.secili::before,
+nav button:hover::before,
+nav button:focus-visible::before {
+color: #e6c58e;
+}
+
+body.gece nav button.secili::before,
+body.gece nav button:hover::before,
+body.gece nav button:focus-visible::before {
+color: #e6c58e;
+}
+
+article:has(#masalMetin[style]) #masalMetin::after {
+content: "✦ Son ✦";
+display: block;
+text-align: center;
+margin-top: 28px;
+padding-top: 18px;
+border-top: 1px solid #ddcdb8;
+color: #94703e;
+font-size: 15px;
+letter-spacing: 2px;
+}
+body.gece #kucult,
+body.gece #buyut {
+background-color: #f6efe3;
+color: #722f37;
+border-color: #ddcdb8;
+}
+
+body.gece #kucult:hover,
+body.gece #buyut:hover {
+background-color: #e8d9c2;
+color: #722f37;
+}
+
+body.gece #masalMetin::after {
+color: #f6efe3;
+border-top-color: #806b50;
+}
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>Bir Varmış Bir Yokmuş</h1>
+    <p>Türk masallarına açılan bir kapı</p>
+    <button type="button" id="temaDegistir" aria-pressed="false"> Gece moduna geç</button>
+    
+  </header>
+
+  <main>
+    <section>
+      <h2>Masal Koleksiyonu</h2>
+  <div class="aramaSatiri">
+<label for="masalAra">Masal ara</label>
+<input type="search" id="masalAra" placeholder="Bir masal adı yazın…">
+</div>
+<p id="aramaSonuc" role="status"></p>
+    <nav aria-label="Masal listesi">
+  <ul>
+    <li><button type="button">Öksüz Kız</button></li>
+    <li><button type="button">Üç Turunçlar</button></li>
+    <li><button type="button">Zümrüdüanka Kuşu</button></li>
+    <li><button type="button">Keloğlan ve Padişahın Kızı</button></li>
+    <li><button type="button">Tuz Kadar Sevgi</button></li>
+    <li><button type="button">Dört Öğüt</button></li>
+    <li><button type="button">Hüsnü Yusuf</button></li>
+    <li><button type="button">Keloğlan ve Altın Bülbül</button></li>
+  </ul>
+</nav>
+<button type="button" id="rastgeleMasal">✦ Bana bir masal seç</button>
+    </section>
+
+   <article>
+<h2 id="masalBaslik">Masal Okuma Alanı</h2>
+<div>
+<button type="button" id="kucult" aria-label="Yazıyı küçült">Yazıyı Küçült</button>
+<button type="button" id="buyut" aria-label="Yazıyı büyüt">Yazıyı Büyült</button>
+</div>
+<p id="masalMetin">Okumak için listeden bir masal seçin.</p>
+
+</article>
+  </main>
+
+  <footer>
+    <p>Türk Masalları Derlemesi · İlayda Akgün</p>
+  </footer>
+  <script>
+const dugmeler = document.querySelectorAll("nav button");
+const baslik = document.getElementById("masalBaslik");
+const metin = document.getElementById("masalMetin");
+const motifler = {
+"Öksüz Kız": "✿",
+"Üç Turunçlar": "🍊",
+"Zümrüdüanka Kuşu": "🪶",
+"Keloğlan ve Padişahın Kızı": "♛",
+"Tuz Kadar Sevgi": "♡",
+"Dört Öğüt": "📜",
+"Hüsnü Yusuf": "🕊",
+"Keloğlan ve Altın Bülbül": "♫"
+};
+
+  dugmeler.forEach(function(dugme) {
+dugme.addEventListener("click", function() {
+const secilenAd = dugme.textContent.trim();
+baslik.textContent = motifler[secilenAd] + " " + secilenAd;
+dugmeler.forEach(function(digerDugme) {
+digerDugme.classList.remove("secili");
+digerDugme.removeAttribute("aria-current");
+});
+
+dugme.classList.add("secili");
+dugme.setAttribute("aria-current", "true");
+if (dugme.textContent.trim() === "Öksüz Kız") {
+metin.textContent = "Annesini kaybeden bir kız, üvey annesinin verdiği ağır işlerle uğraşırmış. Her gün ineği otlatmaya gider, yanında yalnızca kuru bir ekmek götürürmüş. Konuşabilen inek ona yiyecek verir, eğirmesi gereken pamuğu da incecik ipliğe dönüştürürmüş.\n\nÜvey anne bu yardımdan şüphelenerek ineği kestirmiş. Kız, ineğin son isteğini yerine getirip kemiklerini beyaz bir beze sararak yemliğin altına koymuş.\n\nBir gün üvey annesiyle kardeşi saraydaki düğüne giderken kıza iki imkânsız iş bırakmışlar: Bir kazanı gözyaşıyla doldurmak ve birbirine karıştırılmış buğdaylarla mercimekleri ayırmak. Yoldan geçen tuzcu, suya tuz karıştırmasını önermiş. Kızın ekmeğini paylaştığı kalbur satıcıları da taneleri ayırmasına yardım etmiş.\n\nİşlerini bitiren kız yemliğe gidince güzel giysiler ve bir at bulmuş. Düğüne katılmış, dönerken ayakkabısını çeşmede düşürmüş. Ayakkabıyı bulan şehzade sahibini aratmış. Ayakkabı yalnızca öksüz kıza uyunca onunla evlenmiş; kızın sıkıntılı günleri sona ermiş.";
+} else if (dugme.textContent.trim() === "Üç Turunçlar") {
+metin.textContent = "Bir şehzade, yaşlı bir kadının testisini taş atarak kırmış. Kadının sözlerinin ardından üç turunçları bulma arzusuna kapılıp yola çıkmış.\n\nYolda aslan yavrularını bir yılandan kurtarmış, annelerinin ayağındaki dikeni çıkarmış. Aslan da ona devin kalesine nasıl gireceğini öğretmiş. Şehzade kalede hayvanlara uygun yiyecekler vermiş, dikenli bitkilere nazik davranmış. Üç turuncu alırken yaptığı iyilikler sayesinde kaçabilmiş.\n\nTurunçları su yanında açması gerektiğini unutmuş. İlk ikisinden çıkan kızlar susuzluktan ölmüş. Sonuncuyu göl kıyısında açıp içindeki kızı kurtarmış. Ona yüzüğünü vererek saraydan bir karşılama alayı getirmeye gitmiş.\n\nBu sırada başka bir kız, turunç güzelini kandırıp güvercine dönüştürmüş ve onun yerine geçmiş. Güzel kız daha sonra bir kavak ağacına, ardından tahta parçasına dönüşmüş. Tahtayı evine götüren yaşlı kadının yanında yeniden insan olmuş.\n\nŞehzadenin üzüntüden hastalandığını duyunca ona yaptığı çorbaya yüzüğü koymuş. Yüzüğü tanıyan şehzade gerçeği öğrenmiş. Aldatmaca ortaya çıkmış ve iki sevgili yeniden kavuşmuş.";
+} else if (dugme.textContent.trim() === "Zümrüdüanka Kuşu") {
+metin.textContent = "Bir padişahın bahçesindeki elmaları her yıl bir dev çalarmış. Büyük ve ortanca şehzadeler onu durduramamış. Küçük kardeşleri ise devi yaralayıp peşinden gitmiş.\n\nÜç kardeş bir kuyu bulmuş. Küçük şehzade aşağı inerek devi yenmiş ve tutsak üç kız kardeşi kurtarmış. Kızlar yukarı çıkarılmış, fakat şehzadenin ipi kopmuş. Kurtardığı kızın öğrettiği büyüyle beliren iki koyundan karasının üzerine düşünce yerin daha derinlerine gitmiş.\n\nOrada suyun önünü kesen bir ejderhayı yenmiş. Kurtardığı yaşlı kadın, yeryüzüne ancak Zümrüdüanka’nın yardımıyla dönebileceğini söylemiş.\n\nKuşu arayan şehzade, onun yavrularını bir yılandan kurtarmış. Zümrüdüanka teşekkür etmek için dileğini kabul etmiş. Uzun uçuş için et ve süt hazırlamasını istemiş.\n\nHazırlıklar tamamlanınca yola çıkmışlar. Şehzade yol boyunca kuşu beslemiş. Sonunda yeryüzüne ulaşmış, kardeşleriyle ve kurtardığı kızlarla buluşarak saraya dönmüş.";
+} else if (dugme.textContent.trim() === "Keloğlan ve Padişahın Kızı") {
+metin.textContent = "Keloğlan, köyünde zor durumlara bulduğu akıllıca çözümlerle tanınırmış. Bir gün padişahın, kızıyla evlenmek isteyenler arasında yarışma düzenlediğini duymuş. Annesi kaygılansa da hazırlanıp saraya gitmiş.\n\nPadişah adaylara üç soru soracağını açıklamış. İlk olarak gökteki yıldızların sayısını istemiş. Diğerleri susarken Keloğlan, yıldızların padişahın saç telleri kadar olduğunu söylemiş. Bu beklenmedik cevap saraydakileri güldürmüş.\n\nİkinci soru dünyanın merkezinin nerede olduğuymuş. Keloğlan durduğu yeri göstermiş, inanmayanların ölçebileceğini belirtmiş. Kimse bunu ölçmeye girişememiş.\n\nSon olarak padişah, iki parmakla dünyanın nasıl ters çevrileceğini sormuş. Keloğlan biraz düşünmüş, sonra bir ayna istemiş. Aynayı padişahın başının üzerinde tutarak ona dünyayı ters göstermiş.\n\nPadişahın kızı onun zekâsından etkilenmiş. Üç soruya da karşılık bulan Keloğlan yarışmayı kazanmış. Annesinin de katıldığı düğünle evlenmişler.";
+} else if (dugme.textContent.trim() === "Tuz Kadar Sevgi") {
+metin.textContent = "Bir padişah üç oğluna kendisini ne kadar sevdiklerini sormuş. Büyük oğlu sevgisini değerli taşlara, ortancası sevdiği tatlılara benzetmiş. Küçük oğlu ise babasını tuz kadar sevdiğini söylemiş.\n\nPadişah bu cevabı küçümseme sayıp oğlunun öldürülmesini emretmiş. Fakat görevliler şehzadeye kıyamamış ve onu serbest bırakmışlar. Genç, uzak bir ülkeye giderek yalnız yaşayan yaşlı bir kadına sığınmış.\n\nO ülkede yeni hükümdarı seçmek için bir talih kuşu uçurulurmuş. Kuş üç kez şehzadenin başına konunca halk onu padişah kabul etmiş. Genç hükümdar ülkesini iyi yöneterek insanların sevgisini kazanmış.\n\nYıllar sonra babasını kimliğini açıklamadan sarayına çağırmış. Konuklarına güzel yemekler hazırlatmış ama hiçbirine tuz koydurmamış. Babası yemeklerin lezzetsizliğinden yakınmış.\n\nGenç hükümdar eski sözünü hatırlatıp kimliğini açıklamış. Babası tuzun değerini ve oğlunun sevgisini anlayarak ona sarılmış. Barışmışlar; genç padişah hizmet ettiği halkının yanında kalmış.";
+} else if (dugme.textContent.trim() === "Dört Öğüt") {
+metin.textContent = "Yoksul bir adam, ailesini geçindirmek için gurbete gitmiş. Yirmi yıl çalıştıktan sonra evine dönmek istemiş. Ağası ona üç lira vermiş. Ağanın karısı da eşine götürmesi için içine altın sakladığı bir çörek hazırlamış.\n\nAdam ayrılmadan önce üç lirasını ağasından öğüt almak için vermiş. Gece yolculuk etmemesini, dibini görmediği sudan geçmemesini ve gerçeğini bilmediği konuda hüküm vermemesini öğrenmiş. Ağası son olarak bilmediği işe düşünmeden karışmamasını söylemiş.\n\nYolda katıldığı kervan gece ilerlerken o durmuş. Sabah kervanın saldırıya uğradığını görmüş. Sonra karşılaştığı bir atlı derin suya girip kaybolmuş; adam ise güvenli bir geçit aramış.\n\nKonakladığı köyde gördüğü tuhaf ve korkutucu duruma hemen yorum yapmamış. Ev sahibi, suskunluğunun sebebini öğrenince onu ödüllendirip köyüne göndermiş.\n\nEvine vardığında eşinin yanında genç bir erkek görmüş. Öfkeyle davranmak üzereyken son öğüdü hatırlayıp kapıyı çalmış. Gencin, yıllardır görmediği oğlu olduğunu öğrenmiş. Ailesine kavuşunca düşünerek davranmanın değerini anlamış.";
+} else if (dugme.textContent.trim() === "Hüsnü Yusuf") {
+metin.textContent = "Bir padişahın kızı, bahçedeki derenin yanında kırk bir beyaz güvercin görmüş. Kuşlar insan biçimine bürünmüş; kırkı genç kız, biri Hüsnü Yusuf adlı bir delikanlı olmuş. Delikanlı, kızın bileziğini alarak yeniden kuşa dönüşüp uzaklaşmış.\n\nOna gönlünü kaptıran kız beklemekten hastalanmış. Babası, gelenlerin ilginç olaylar anlattığı bir hamam yaptırmış. Bir ziyaretçi, güvercinlerin yaşadığı gizli yeri tarif etmiş.\n\nKız oraya gidip bir dolaba saklanmış. Hüsnü Yusuf geldiğinde konuşan dolap onun yerini açıklamış. İki genç kavuşmuş, fakat perilerin tehlikesinden korunmak için kız daha sonra Yusuf’un babasının sarayına götürülmüş. Orada bir oğulları doğmuş.\n\nGizli ziyaretler fark edilince saraydaki padişah gerçeği öğrenmiş. Hüsnü Yusuf’u perilerden kurtarmak için başka bir beyaz güvercini kullanarak onları yanıltmış. Periler, Yusuf sandıkları kuşun ardından ateşe atılmışlar.\n\nTehlike sona erince iki genç çocuklarıyla birlikte güvene kavuşmuş ve düğünleri yapılmış.";
+} else if (dugme.textContent.trim() === "Keloğlan ve Altın Bülbül") {
+metin.textContent = "Bir padişah camdan bir cami yaptırmış. Karşısına çıkan yaşlı bir adam, yapının Kafdağı’nın ardındaki Altın Bülbül ile tamamlanacağını söylemiş. Padişahın üç oğlu kuşu bulmak için yola çıkmış.\n\nYollar ayrılınca en zorlu yol küçük kardeşe düşmüş. Kararlılıkla ilerleyen genç, karşılaştığı bir ihtiyarın desteğiyle yolculuğunu sürdürmüş. Devleri yenmiş, peri kızlarından yol öğrenmiş ve bir kedinin yardımıyla Altın Bülbül’ü bulmuş.\n\nDönüşte ağabeylerini de yanına almış. Ancak onlar kıskançlıkla küçük kardeşlerini suya atıp kuşu babalarına götürmüşler. Altın Bülbül sarayda hiç ötmemiş.\n\nHayatta kalan genç, kimliğini gizleyerek Keloğlan görünümüne bürünmüş ve bir handa çalışmaya başlamış. Han sahibi hastalanınca ona şifa getirmesi umulan suyu almak için babasının yaptırdığı camiye gitmiş.\n\nAltın Bülbül onu görünce ötmeye başlamış. Padişah bu durumu araştırınca genç kimliğini açıklamış. Kuşu getirenin küçük oğlu olduğunu öğrenen padişah, diğer oğullarını saraydan uzaklaştırmış.";
+} else {
+metin.textContent = "Lütfen listeden bir masal seçin.";
+}
+});
+});
+let yaziBoyutu = 18;
+metin.style.fontSize = yaziBoyutu + "px";
+
+document.getElementById("buyut").addEventListener("click", function() {
+if (yaziBoyutu < 30) {
+yaziBoyutu = yaziBoyutu + 2;
+metin.style.fontSize = yaziBoyutu + "px";
+}
+});
+
+document.getElementById("kucult").addEventListener("click", function() {
+if (yaziBoyutu > 14) {
+yaziBoyutu = yaziBoyutu - 2;
+metin.style.fontSize = yaziBoyutu + "px";
+}
+});
+document.getElementById("masalAra").addEventListener("input", function() {
+const aranan = this.value.trim().toLocaleLowerCase("tr");
+
+  dugmeler.forEach(function(dugme) {
+const isim = dugme.textContent.toLocaleLowerCase("tr");
+dugme.parentElement.hidden = !isim.includes(aranan);
+});
+});
+document.getElementById("temaDegistir").addEventListener("click", function() {
+const geceAcik = document.body.classList.toggle("gece");
+this.setAttribute("aria-pressed", String(geceAcik));
+
+  if (geceAcik) {
+this.textContent = "Gündüz moduna geç";
+} else {
+this.textContent = "Gece moduna geç";
+}
+});
+document.getElementById("rastgeleMasal").addEventListener("click", function() {
+const arama = document.getElementById("masalAra");
+arama.value = "";
+arama.dispatchEvent(new Event("input"));
+
+  const sira = Math.floor(Math.random() * dugmeler.length);
+dugmeler[sira].click();
+});
+</script>
+</body>
+</html>
