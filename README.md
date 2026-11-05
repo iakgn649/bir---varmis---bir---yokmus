@@ -31,4 +31,7 @@ Mac bilgisayarda Google Chrome ile kontrol edilmiştir. Dar ekran düzeni, taray
 Kaynaklar ve yapay zekâ kullanımı
 
 Masal kaynakları proje raporunun kaynakça bölümünde belirtilmiştir. Masalların kısaltılması ve yeniden anlatılması, kodların hazırlanmasında yardım  ve hataların düzeltilmesinde ChatGPT desteği alınmıştır. Tasarım tercihleri tarafımdan belirlenmiş ve özellikler adım adım kontrol edilmiştir.
+
+
+
 Sunum videosu:https://youtu.be/GbCG_Iaj450
