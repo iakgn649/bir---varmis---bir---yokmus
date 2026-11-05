@@ -26,12 +26,9 @@ Depoyu Code → Download ZIP seçeneğiyle indirin ve ZIP dosyasını açın. İ
 
 Test
 
-Mac bilgisayarda Google Chrome ile kontrol edilmiştir. Dar ekran düzeni, tarayıcı penceresi küçültülerek denenmiştir. Gerçek telefonda henüz test edilmemiştir.
-
-Bilinen eksiklik
-
-Masal seçilmeden önce de “Son” yazısı görünmektedir.
+Mac bilgisayarda Google Chrome ile kontrol edilmiştir. Dar ekran düzeni, tarayıcı penceresi küçültülerek denenmiştir. 
 
 Kaynaklar ve yapay zekâ kullanımı
 
-Masal kaynakları proje raporunun kaynakça bölümünde belirtilmiştir. Masalların kısaltılması ve yeniden anlatılması, kodların hazırlanması ve hataların düzeltilmesinde ChatGPT desteği alınmıştır. Tasarım tercihleri tarafımdan belirlenmiş ve özellikler adım adım kontrol edilmiştir.
+Masal kaynakları proje raporunun kaynakça bölümünde belirtilmiştir. Masalların kısaltılması ve yeniden anlatılması, kodların hazırlanmasında yardım  ve hataların düzeltilmesinde ChatGPT desteği alınmıştır. Tasarım tercihleri tarafımdan belirlenmiş ve özellikler adım adım kontrol edilmiştir.
+Sunum videosu:https://youtu.be/GbCG_Iaj450
