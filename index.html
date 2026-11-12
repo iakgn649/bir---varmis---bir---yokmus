@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bir Varmış Bir Yokmuş</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Bir Varmış Bir Yokmuş</h1>
+    <p>Türk masallarına açılan bir kapı</p>
+    <button type="button" id="temaDegistir" aria-pressed="false"> Gece moduna geç</button>
+    
+  </header>
+
+  <main>
+    <section>
+      <h2>Masal Koleksiyonu</h2>
+  <div class="aramaSatiri">
+<label for="masalAra">Masal ara</label>
+<input type="search" id="masalAra" placeholder="Bir masal adı yazın…">
+</div>
+<p id="aramaSonuc" role="status"></p>
+    <nav aria-label="Masal listesi">
+  <ul>
+    <li><button type="button">Öksüz Kız</button></li>
+    <li><button type="button">Üç Turunçlar</button></li>
+    <li><button type="button">Zümrüdüanka Kuşu</button></li>
+    <li><button type="button">Keloğlan ve Padişahın Kızı</button></li>
+    <li><button type="button">Tuz Kadar Sevgi</button></li>
+    <li><button type="button">Dört Öğüt</button></li>
+    <li><button type="button">Hüsnü Yusuf</button></li>
+    <li><button type="button">Keloğlan ve Altın Bülbül</button></li>
+  </ul>
+</nav>
+<button type="button" id="rastgeleMasal">✦ Bana bir masal seç</button>
+    </section>
+
+   <article>
+<h2 id="masalBaslik">Masal Okuma Alanı</h2>
+<div>
+<button type="button" id="kucult" aria-label="Yazıyı küçült">Yazıyı Küçült</button>
+<button type="button" id="buyut" aria-label="Yazıyı büyüt">Yazıyı Büyült</button>
+</div>
+<p id="masalMetin">Okumak için listeden bir masal seçin.</p>
+
+</article>
+  </main>
+
+  <footer>
+    <p>Türk Masalları Derlemesi · İlayda Akgün</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
